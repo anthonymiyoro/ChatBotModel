@@ -1,7 +1,7 @@
 package com.example.tony.stalkerapp;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,6 +33,12 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+           /* // Log setting open event with category="ui", action="open", and label="settings"
+            stalkerapp.tracker().send(new HitBuilders.EventBuilder("ui", "open")
+                    .setLabel("settings")
+                    .build());
+            return true;*/
+
         }
 
         return super.onOptionsItemSelected(item);
