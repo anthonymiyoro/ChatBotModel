@@ -34,11 +34,11 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
            /* // Log setting open event with category="ui", action="open", and label="settings"
-            stalkerapp.tracker().send(new HitBuilders.EventBuilder("ui", "open")
+            Analytics.tracker().send(new HitBuilders.EventBuilder("ui", "open")
                     .setLabel("settings")
                     .build());
-            return true;*/
-
+            return true;
+        */
         }
 
         return super.onOptionsItemSelected(item);
