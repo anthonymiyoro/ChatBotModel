@@ -43,7 +43,13 @@
         </receiver>
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
 
+       <!--
+       Applications can optionally provide a metadata reference to a global configuration XML resource
+        file in the <application> element of the AndroidManifest.xml. For example:
 
+       <meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/analytics_global_config" /> -->
 
         <activity
             android:name=".MainActivity"
