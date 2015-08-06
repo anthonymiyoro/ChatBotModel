@@ -18,6 +18,11 @@ android {
         }
     }
 }
+apply plugin: 'com.android.application'
+
+
+
+
 
 apply plugin: 'com.android.application'
 dependencies {
