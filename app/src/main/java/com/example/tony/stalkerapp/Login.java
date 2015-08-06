@@ -35,7 +35,7 @@ implements View.OnClickListener,
 
     private static final int RC_SIGN_IN = 0;
     // Logcat tag
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Login";
 
     // Profile pic image size in pixels
     private static final int PROFILE_PIC_SIZE = 400;
