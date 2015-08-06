@@ -19,10 +19,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by nganga on 8/6/15.
- */
-
 public class InstagramDialog extends Dialog {
     static final float[] DIMENSIONS_LANDSCAPE = { 460, 260 };
     static final float[] DIMENSIONS_PORTRAIT = { 280, 420 };
