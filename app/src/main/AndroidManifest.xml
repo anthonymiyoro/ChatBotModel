@@ -2,18 +2,76 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tony.stalkerapp" >
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+=======
+    <!-- Google Analytics required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Optional permission for reliable local dispatching on non-Google Play devices -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+>>>>>>> cc0a6399564fddf76b05ce3f476afc735e5fe366
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
+<<<<<<< HEAD
+=======
+        <!-- Add the following meta-data for devices running Google Play service. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!--
+        Optionally, register AnalyticsReceiver and AnalyticsService to support background
+        dispatching on non-Google Play devices
+        -->
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!--
+        Optionally, register CampaignTrackingReceiver and CampaignTrackingService to enable
+        installation campaign reporting
+        -->
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+
+        <!--
+       Applications can optionally provide a metadata reference to a global configuration XML resource
+        file in the <application> element of the AndroidManifest.xml. For example:
+
+       <meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/analytics_global_config" />
+        -->
+
+>>>>>>> cc0a6399564fddf76b05ce3f476afc735e5fe366
         <activity
             android:name=".Login"
             android:label="@string/app_name" >
@@ -23,6 +81,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity
             android:name=".MainActivity"
@@ -35,6 +94,15 @@
         </activity>
 
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+=======
+        <activity
+            android:name=".Timeline"
+            android:label="@string/title_activity_timeline" >
+        </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a52e7d1b559ea35cf6c66c368440e365b2605a7f" />
+>>>>>>> cc0a6399564fddf76b05ce3f476afc735e5fe366
     </application>
 
 </manifest>

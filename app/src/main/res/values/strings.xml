@@ -3,9 +3,13 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
 
 
     <!-- Button text -->
     <string name="btn_logout_from_google">Logout from Google</string>
     <string name="btn_revoke_access">Revoke Access</string>
+=======
+    <string name="title_activity_timeline">Timeline</string>
+>>>>>>> cc0a6399564fddf76b05ce3f476afc735e5fe366
 </resources>
