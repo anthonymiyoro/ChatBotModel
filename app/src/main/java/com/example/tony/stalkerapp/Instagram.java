@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
-import java.util.logging.Handler;
+
 
 import javax.security.auth.callback.Callback;
 
@@ -28,7 +29,7 @@ public class Instagram extends Activity{
     private Button btnConnect, btnViewInfo, btnGetAllImages;
     private LinearLayout llAfterLoginView;
     private HashMap<String, String> userInfoHashmap = new HashMap<String, String>();
-   /* private Handler handler = new Handler(new Callback() {
+   private Handler handler = new Handler(new Callback() {
         @Override
         public boolean handleMessage(Message msg) {
             if (msg.what == InstagramApp.WHAT_FINALIZE) {
@@ -39,7 +40,7 @@ public class Instagram extends Activity{
             }
             return false;
         }
-    });*/
+    });
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +96,7 @@ public class Instagram extends Activity{
     private void connectOrDisconnectUser() {
         if (mApp.hasAccessToken()) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(
-                    MainActivity.this);
+                    Instagram.this);
             builder.setMessage("Disconnect from Instagram?")
                     .setCancelable(false)
                     .setPositiveButton("Yes",
