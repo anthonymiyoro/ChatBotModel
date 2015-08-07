@@ -21,29 +21,29 @@ import java.net.URL;
  * Created by nganga on 8/6/15.
  */
 public class InstagramApp {
-    private InstagramSession mSession;
-    private InstagramDialog mDialog;
-    private OAuthAuthenticationListener mListener;
-    private ProgressDialog mProgress;
-    private String mAuthUrl;
-    private String mTokenUrl;
-    private String mAccessToken;
-    private Context mCtx;
-    private String mClientId;
-    private String mClientSecret;
-    private static int WHAT_FINALIZE = 0;
-    private static int WHAT_ERROR = 1;
-    private static int WHAT_FETCH_INFO = 2;
+    protected InstagramSession mSession;
+    protected InstagramDialog mDialog;
+    protected OAuthAuthenticationListener mListener;
+    protected ProgressDialog mProgress;
+    protected String mAuthUrl;
+    protected String mTokenUrl;
+    protected String mAccessToken;
+    protected Context mCtx;
+    protected String mClientId;
+    protected String mClientSecret;
+    protected static int WHAT_FINALIZE = 0;
+    protected static int WHAT_ERROR = 1;
+    protected static int WHAT_FETCH_INFO = 2;
     /**
      * Callback url, as set in 'Manage OAuth Costumers' page
      * (https://developer.github.com/)
      */
-    public static String mCallbackUrl = "";
-    private static final String AUTH_URL = "https://api.instagram.com/oauth/authorize/";
-    private static final String TOKEN_URL = "https://api.instagram.com/oauth/access_token";
-    private static final String API_URL = "https://api.instagram.com/v1";
-    private static final String TAG = "InstagramAPI";
-    public InstagramApp(Context context, String clientId, String clientSecret,
+    public static String mCallbackUrl = "http://valentinerutto.github.io";
+    protected static final String AUTH_URL = "https://api.instagram.com/oauth/authorize/";
+    protected static final String TOKEN_URL = "https://api.instagram.com/oauth/access_token";
+    protected static final String API_URL = "https://api.instagram.com/v1";
+    protected static final String TAG = "InstagramAPI";
+    protected InstagramApp(Context context, String clientId, String clientSecret,
                         String callbackUrl) {
         mClientId = clientId;
         mClientSecret = clientSecret;
@@ -69,7 +69,7 @@ public class InstagramApp {
         mProgress = new ProgressDialog(context);
         mProgress.setCancelable(false);
     }
-    private void getAccessToken(final String code) {
+    protected void getAccessToken(final String code) {
         mProgress.setMessage("Getting access token ...");
         mProgress.show();
         new Thread() {
@@ -110,7 +110,7 @@ public class InstagramApp {
             }
         }.start();
     }
-    private void fetchUserName() {
+    protected void fetchUserName() {
         mProgress.setMessage("Finalizing ...");
         new Thread() {
             @Override
@@ -138,7 +138,7 @@ public class InstagramApp {
             }
         }.start();
     }
-    private Handler mHandler = new Handler() {
+    protected Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == WHAT_ERROR) {
@@ -180,7 +180,7 @@ public class InstagramApp {
 //mCtx.startActivity(webAuthIntent);
         mDialog.show();
     }
-    private String streamToString(InputStream is) throws IOException {
+    protected String streamToString(InputStream is) throws IOException {
         String str = "";
         if (is != null) {
             StringBuilder sb = new StringBuilder();
