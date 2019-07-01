@@ -21,17 +21,22 @@ class FormController extends BaseController
     public function sendPostRequest(Request $request){
 
         print_r($request->input('Twitter_Username'));
-        $tname = ($request->input('Twitter_Username'));
+        echo '<br/>';
+        $form_result = ($request->input('Twitter_Username'));
 
-           $client = new Client([
-          // You can set any number of default request options.
-          'timeout'  => 2000.0,
-          'auth' => ['admin','Pass@1234']
+        // Pass input from form to avoid expected POST request but got GET request error
+        $twitter_username = $form_result;
+
+        $client = new Client([
+
+        // Pass long timeout because server is slow :(
+        'timeout'  => 2000.0,
+        'auth' => ['admin','Pass@1234']
       ]);
 
       $request = $client->post('http://amiyoro2.pythonanywhere.com/analyse_tweet/', [
-            'form_params' => ['twitter_user' => '@migunamiguna'],
-            'twitter_user' => '@migunamiguna'
+            'form_params' => ['twitter_user' => $twitter_username],
+            'twitter_user' => $twitter_username
         ]);
 
         echo $request->getStatusCode();
