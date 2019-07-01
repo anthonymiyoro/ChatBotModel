@@ -16,4 +16,8 @@ class FormController extends BaseController
     public function show(Request $request){
         return view('greeting');
     }
+
+    public function sendPostRequest(Request $request){
+        print_r($request);
+    }
 }

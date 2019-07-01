@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 // Form route
 Route::get('/form', 'FormController@show');
+
+// Post request route
+Route::post('/submit', 'FormController@sendPostRequest');
