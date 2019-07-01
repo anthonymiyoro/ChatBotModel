@@ -18,6 +18,6 @@ class FormController extends BaseController
     }
 
     public function sendPostRequest(Request $request){
-        print_r($request);
+        print_r($request->input());
     }
 }

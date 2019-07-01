@@ -1,4 +1,5 @@
 <html>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <h1>FORM</h1> <p>ni gani?</p>
     <form method="POST" action="{{URL::to('/submit')}}">
     <input name="Twitter Username" type="text">
