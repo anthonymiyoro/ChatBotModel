@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Form route
+Route::get('/form', 'FormController@show');
