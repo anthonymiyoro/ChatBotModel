@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 
 class FormController extends BaseController
@@ -18,6 +19,23 @@ class FormController extends BaseController
     }
 
     public function sendPostRequest(Request $request){
-        print_r($request->input());
+
+        print_r($request->input('Twitter_Username'));
+        $tname = ($request->input('Twitter_Username'));
+
+        $client = new Client([
+            // You can set any number of default request options.
+            'timeout'  => 200.0,
+        ]);
+
+        $res = $client->request('POST', 'http://amiyoro2.pythonanywhere.com/analyse_tweet/', [
+            'form_params' => [
+                'twitter_user' => $tname,
+            ]
+        ]);
+
+        $result= $res->getBody();
+        dd($result);
+
     }
 }
