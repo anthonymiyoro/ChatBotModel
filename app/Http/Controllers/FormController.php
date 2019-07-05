@@ -25,7 +25,7 @@ class FormController extends BaseController
         $form_result = ($request->input('Twitter_Username'));
 
         // Pass input from form to avoid expected POST request but got GET request error
-        $twitter_username = $form_result;
+        $twitter_username = (string)$form_result;
 
         $client = new Client([
 
