@@ -14,12 +14,13 @@ use GuzzleHttp\Client;
 
 class FormController extends BaseController
 {
+    // Load form view
     public function show(Request $request){
         return view('greeting');
     }
 
+    // Send POST request
     public function sendPostRequest(Request $request){
-
         print_r($request->input('Twitter_Username'));
         echo '<br/>';
         $form_result = ($request->input('Twitter_Username'));
@@ -28,13 +29,12 @@ class FormController extends BaseController
         $twitter_username = (string)$form_result;
 
         $client = new Client([
-
         // Pass long timeout because server is slow :(
         'timeout'  => 2000.0,
         'auth' => ['admin','Pass@1234']
-      ]);
+        ]);
 
-      $request = $client->post('http://amiyoro2.pythonanywhere.com/analyse_tweet/', [
+        $request = $client->post('http://amiyoro2.pythonanywhere.com/analyse_tweet/', [
             'form_params' => ['twitter_user' => $twitter_username],
             'twitter_user' => $twitter_username
         ]);
