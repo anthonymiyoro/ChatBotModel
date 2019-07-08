@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Form route
-Route::get('/form', 'FormController@show');
+Route::get('/', 'FormController@show');
 
 // Post request route
 Route::post('/submit', 'FormController@sendPostRequest');
