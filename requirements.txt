@@ -4,6 +4,6 @@ requests
 flask
 tflearn
 numpy
-tensorflow
+tensorflow==1.14
 
 
