@@ -4,6 +4,6 @@ requests
 flask
 tflearn
 numpy
-tensorflow==2.7.2
+tensorflow==2.9.3
 
 
